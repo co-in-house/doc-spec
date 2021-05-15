@@ -1,3 +1,3 @@
 # API一覧
 
-- [sample](#./api/sample)
+- [sample](./api/sample.md "sample")
