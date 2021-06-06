@@ -6,6 +6,7 @@
 | TAG_ID| | N| bigint | P| AUTO GENERATED | |
 | TAG_NAME| | N| varchar(255)| | | |
 | COMMUNITY_ID| | N| bigint | | | |
+| TAG_TYPE| | N| int | | | |
 
  
 ### INDEX情報
