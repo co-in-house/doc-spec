@@ -1,0 +1,9 @@
+include::../includes/style.adoc[]
+
+[index]
+= EVENT
+
+
+:leveloffset: +1
+include::community.adoc[]
+include::event.adoc[]

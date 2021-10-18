@@ -1,0 +1,14 @@
+= COMMUNITY
+
+.tbl def COMMUNITY
+[options="header,autowidth,autoheight"]
+|================
+|COLUMN|ITEM|TYPE|LENGTH|PK|UNIQUE|FK|NN|AUTOINC|DEFAULT|OVERVIEW
+
+|community_id|コミュニティ識別子|bigint||○|||○|||管理用コミュニティ識別子
+|community_account_name|コミュニティアカウント名|VARCHAR|32||||○|||@始まりのコミュニティアカウント名
+|community_name|コミュニティ名|VARCHAR|32||||○|||表示コミュニティ名
+|comment|コメント|VARCHAR|16||||○|||コメント
+|================
+
+

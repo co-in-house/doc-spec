@@ -1,0 +1,19 @@
+= EVENT
+
+.tbl def EVENT
+[options="header,autowidth"]
+|================
+|COLUMN|ITEM|TYPE|LENGTH|PK|UNIQUE|FK|NN|AUTOINC|DEFAULT|OVERVIEW
+
+|evnet_id|イベント識別子|bigint||○|○||○|○||管理用イベント識別子
+|community_id|コミュニティ識別子|bigint|||||○|||コミュニティTBLのコミュニティ識別子
+|title|タイトル|VARCHAR|32||||○|||タイトル
+|start|開始日時|TIMESTAMP|||||○|||開始予定日時
+|end|終了日時|TIMESTAMP|||||○|||終了予定日時
+|location|位置|VARCAHR|50||||○|||開催場所やオンラインなど
+|description|説明|VARCHAR|300|||||||イベント説明文
+|thumbnail_img|サムネイルURL|VARCHAR|500||||○|||サムネイル用画像URL
+|================
+
+
+
