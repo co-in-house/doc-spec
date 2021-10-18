@@ -14,7 +14,7 @@
 |description|説明|VARCHAR|300|||||||イベント説明文
 |thumbnail_img|サムネイルURL|VARCHAR|500||||○|||サムネイル用画像URL
 |created|作成日時|TIMESTAMP|||||○||<現在日時>|作成日時
-|modified|作成日時|TIMESTAMP|||||○||<現在日時>|更新日時
+|modified|更新日時|TIMESTAMP|||||○||<現在日時>|更新日時
 |================
 
 

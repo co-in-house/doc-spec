@@ -10,7 +10,7 @@
 |community_name|コミュニティ名|VARCHAR|32||||○|||表示コミュニティ名
 |comment|コメント|VARCHAR|16||||○|||コメント
 |created|作成日時|TIMESTAMP|||||○||<現在日時>|作成日時
-|modified|作成日時|TIMESTAMP|||||○||<現在日時>|更新日時
+|modified|更新日時|TIMESTAMP|||||○||<現在日時>|更新日時
 |================
 
 
