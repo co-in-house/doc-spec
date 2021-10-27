@@ -11,8 +11,9 @@
 |start|開始日時|TIMESTAMP|||||○|||開始予定日時
 |end|終了日時|TIMESTAMP|||||○|||終了予定日時
 |location|位置|VARCAHR|50||||○|||開催場所やオンラインなど
-|description|説明|VARCHAR|300|||||||イベント説明文
+|description|説明|VARCHAR|500|||||||イベント説明文
 |thumbnail_img|サムネイルURL|VARCHAR|500||||○|||サムネイル用画像URL
+|delete_flag|削除フラグ|int|||||○||0|論理削除用フラグ
 |created|作成日時|TIMESTAMP|||||○||<現在日時>|作成日時
 |modified|更新日時|TIMESTAMP|||||○||<現在日時>|更新日時
 |================
