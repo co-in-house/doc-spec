@@ -6,30 +6,12 @@
 |COLUMN|ITEM|TYPE|LENGTH|PK|UNIQUE|FK|NN|AUTOINC|DEFAULT|OVERVIEW
 
 |community_id|コミュニティ識別子|bigint||○|○||○|||管理用コミュニティ識別子
-// |community_account_name|コミュニティアカウント名|VARCHAR|32||○||○|||@始まりのコミュニティアカウント名
-|community_name|コミュニティ名|VARCHAR|32||||○|||表示コミュニティ名
+|community_name|コミュニティ名|VARCHAR|64||||○|||表示用コミュニティ名
+|location|位置|VARCAHR|100||||○|||開催場所やオンラインなど
+|description|説明|VARCHAR|1000|||||||イベント説明文
+|icon_img|サムネイルURL|VARCHAR|500||||○|||サムネイル用画像URL
 |delete_flag|削除フラグ|int|||||○||0|論理削除用フラグ
 |created|作成日時|TIMESTAMP|||||○||<現在日時>|作成日時
 |modified|更新日時|TIMESTAMP|||||○||<現在日時>|更新日時
 |================
 
-
-
-* コミュニティ名 必須
-* icon画像 必須
-* 場所 -> 任意
-* 詳細文章 任意
-* タグ(複数)
-** コミュニティ検索の検索対象は一旦 コミュニティ検索など検索ロジック次第
-
-* 参加人数
-** 参加メンバー一覧
-** メンバーの情報
-*** iconImg
-*** userName
-
-* アルバム list
-** アルバムサムネ
-** アルバム名
-** 写真の枚数
-** 作成日 
