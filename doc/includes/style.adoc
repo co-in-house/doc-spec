@@ -8,10 +8,3 @@
 :checked: icon:check-square-o[]
 :unchecked: icon:square-o[]
 :imagesdir: .
-
-
-
-
-
-
-

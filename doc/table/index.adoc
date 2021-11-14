@@ -1,10 +1,11 @@
 include::../includes/style.adoc[]
 
-[index]
-= EVENT
-= COMMUNITY
-
+= Table Def.
 
 :leveloffset: +1
 include::community.adoc[]
+include::user.adoc[]
+include::user_community_relation.adoc[]
+include::album.adoc[]
+include::album_photo.adoc[]
 include::event.adoc[]
