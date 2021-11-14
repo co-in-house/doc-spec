@@ -7,16 +7,15 @@
 
 |evnet_id|イベント識別子|bigint||○|○||○|○||管理用イベント識別子
 |community_id|コミュニティ識別子|bigint|||||○|||コミュニティTBLのコミュニティ識別子
-|title|タイトル|VARCHAR|32||||○|||タイトル
+|title|タイトル|VARCHAR|64||||○|||タイトル
 |start|開始日時|TIMESTAMP|||||○|||開始予定日時
 |end|終了日時|TIMESTAMP|||||○|||終了予定日時
-|location|位置|VARCAHR|50||||○|||開催場所やオンラインなど
-|description|説明|VARCHAR|500|||||||イベント説明文
+|location|位置|VARCAHR|100||||○|||開催場所やオンラインなど
+|description|説明|VARCHAR|1000|||||||イベント説明文
 |thumbnail_img|サムネイルURL|VARCHAR|500||||○|||サムネイル用画像URL
 |delete_flag|削除フラグ|int|||||○||0|論理削除用フラグ
 |created|作成日時|TIMESTAMP|||||○||<現在日時>|作成日時
 |modified|更新日時|TIMESTAMP|||||○||<現在日時>|更新日時
 |================
-
 
 
