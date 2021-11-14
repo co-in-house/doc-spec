@@ -7,7 +7,6 @@
 
 |album_photo_id|写真識別子|bigint||○|○||○|○||管理用写真識別子
 |album_id|アルバム識別子|bigint|||||○|||アルバムTBLのアルバム識別子
-|community_id|コミュニティ識別子|bigint|||||○|||コミュニティTBLのコミュニティ識別子
 |url|画像URL|VARCHAR|500||||○|||画像URL
 |delete_flag|削除フラグ|int|||||○||0|論理削除用フラグ
 |created|作成日時|TIMESTAMP|||||○||<現在日時>|作成日時
