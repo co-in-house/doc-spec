@@ -1,5 +1,4 @@
-@startuml アプリ内ユースケース図
-' 画面別ユースケース定義. modalは考慮しない
+@startuml usecase
 
 ' User -up- (上)
 ' User -do- (下)
@@ -45,6 +44,7 @@ user --> uc104
 user --> uc105
 uc105 -.> uc106
 
+
 package "Event" {
   usecase "参加済みコミュニティのイベント一覧を閲覧する" as uc201
   usecase "イベントを管理する" as uc202
@@ -57,13 +57,25 @@ uc202 <-- user
     uc202 -up.> uc202.1
     uc202 -up.> uc202.2
 
+
+
+package "Profile" {
+    usecase "プロフィール情報を管理する" as uc301
+        usecase "編集する" as uc301.1
+    usecase "参加済みコミュニティを管理する" as uc302
+        usecase "コミュニティから退会する" as uc302.1
+    usecase "退会する" as uc303
+}
+
+uc301 <-- user
+    uc301 -up.> uc301.1
+uc302 <-- user 
+    uc302 -up.> uc302.1
+uc303 <-- user 
+
+
 package "Lounge" {
     ' usecase 
 }
-
-package "Profile" {
-    ' usecase 
-}
-
 
 @enduml

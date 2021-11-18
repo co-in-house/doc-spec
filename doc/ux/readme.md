@@ -1,2 +1,2 @@
 # usercase
-![アプリ内ユースケース図](./アプリ内ユースケース図.png)
+![usecase](./usecase.png)
