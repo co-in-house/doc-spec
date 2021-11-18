@@ -1,0 +1,69 @@
+@startuml アプリ内ユースケース図
+' 画面別ユースケース定義. modalは考慮しない
+
+' User -up- (上)
+' User -do- (下)
+' User -le- (左) 
+' User -ri- (右
+
+left to right direction
+actor エンドユーザ as user
+
+package "Auth" {
+  usecase "ログイン/ログアウトする" as uc001
+}
+user -> uc001
+
+package "Community" {
+  usecase "コミュニティを検索する" as uc101
+  usecase "コミュニティに参加する" as uc102
+  usecase "コミュニティを管理する" as uc103
+    usecase "作成する" as uc103.1
+    usecase "編集する" as uc103.2
+  usecase "コミュニティ参加者を管理する" as uc104
+    usecase "参加者を退会させる" as uc104.1
+    usecase "参加申請者を承認する" as uc104.2
+    usecase "参加申請者を却下する" as uc104.3
+    usecase "参加者アクションをキャンセルする" as uc104.4
+  usecase "アルバムを作成/編集/閲覧する" as uc105
+  usecase "写真を追加/削除する" as uc106
+}
+
+user --> uc101
+user --> uc102
+user --> uc103
+    uc103 -.> uc103.1
+    uc103 -.> uc103.2
+user --> uc104
+    uc104 -.> uc104.1
+    uc104 -.> uc104.2
+    uc104 -.> uc104.3
+    uc104 -.> uc104.4
+    uc104.4 -|> uc104.1
+    uc104.4 -|> uc104.2
+    uc104.4 -|> uc104.3
+user --> uc105
+uc105 -.> uc106
+
+package "Event" {
+  usecase "参加済みコミュニティのイベント一覧を閲覧する" as uc201
+  usecase "イベントを管理する" as uc202
+    usecase "作成する" as uc202.1
+    usecase "編集する" as uc202.2
+}
+
+uc201 <-- user
+uc202 <-- user 
+    uc202 -up.> uc202.1
+    uc202 -up.> uc202.2
+
+package "Lounge" {
+    ' usecase 
+}
+
+package "Profile" {
+    ' usecase 
+}
+
+
+@enduml
