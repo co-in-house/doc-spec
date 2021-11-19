@@ -19,6 +19,7 @@ package "Community" {
   usecase "コミュニティを管理する" as uc103
     usecase "作成する" as uc103.1
     usecase "編集する" as uc103.2
+    usecase "閲覧する" as uc103.3
   usecase "コミュニティ参加者を管理する" as uc104
     usecase "参加者を退会させる" as uc104.1
     usecase "参加申請者を承認する" as uc104.2
@@ -33,6 +34,7 @@ user --> uc102
 user --> uc103
     uc103 -.> uc103.1
     uc103 -.> uc103.2
+    uc103 -.> uc103.3
 user --> uc104
     uc104 -.> uc104.1
     uc104 -.> uc104.2
@@ -45,37 +47,67 @@ user --> uc105
 uc105 -.> uc106
 
 
+
+
 package "Event" {
   usecase "参加済みコミュニティのイベント一覧を閲覧する" as uc201
   usecase "イベントを管理する" as uc202
     usecase "作成する" as uc202.1
     usecase "編集する" as uc202.2
+    usecase "閲覧する" as uc202.3
 }
 
-uc201 <-- user
-uc202 <-- user 
-    uc202 -up.> uc202.1
-    uc202 -up.> uc202.2
+user --> uc201
+user --> uc202
+    uc202 -.> uc202.1
+    uc202 -.> uc202.2
+    uc202 -.> uc202.3
+
 
 
 
 package "Profile" {
     usecase "プロフィール情報を管理する" as uc301
         usecase "編集する" as uc301.1
+        usecase "閲覧する" as uc301.2
     usecase "参加済みコミュニティを管理する" as uc302
-        usecase "コミュニティから退会する" as uc302.1
+        usecase "参加済みコミュニティを閲覧する" as uc302.1
+        usecase "コミュニティから退会する" as uc302.2
     usecase "退会する" as uc303
 }
 
 uc301 <-- user
     uc301 -up.> uc301.1
+    uc301 -up.> uc301.2
 uc302 <-- user 
     uc302 -up.> uc302.1
+    uc302 -up.> uc302.2
 uc303 <-- user 
 
 
+
+
 package "Lounge" {
-    ' usecase 
+    usecase "会話(チャット)する" as uc401
+      usecase "会話を開始する" as uc401.1
+      usecase "会話に入る" as uc401.2
+      usecase "会話から出る" as uc401.3
+      usecase "ユーザを会話に招待する" as uc401.5
+      usecase "招待を受領する" as uc401.5.1
+      usecase "招待を拒否する" as uc401.5.2
+    usecase "会話可能ユーザを閲覧する" as uc402
 }
 
+uc401 <-- user 
+    uc401.1 <.- uc401  
+    uc401.2 <.- uc401 
+    uc401.3 <.- uc401
+    uc401.5 <.- uc401
+    uc401.5.1  -up-|> uc401.5
+    uc401.5.2  -up-|> uc401.5
+uc402 <-- user
+
 @enduml
+
+
+ログインしている人を見る
