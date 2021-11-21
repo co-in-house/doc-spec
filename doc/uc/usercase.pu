@@ -1,5 +1,5 @@
 @startuml usecase
-
+title usecase
 ' User -up- (上)
 ' User -do- (下)
 ' User -le- (左) 

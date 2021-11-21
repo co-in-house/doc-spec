@@ -1,0 +1,33 @@
+@startuml 00_activity
+header 2021.11.21
+
+start
+-> Inhouse App起動;
+
+partition "Login" {
+    if (既にログインしている) then (yes)
+    else (no)
+        repeat :認証認可画面;
+            -> Social Loginボタン 押下;
+            :Social Login画面;
+        repeat while (ログイン正常終了) is (no) not (yes) 
+    endif
+}
+
+partition "Lounge" {
+    :ラウンジ画面;
+    note right
+        参加済みコミュニティが無くやることがない
+    end note
+    if (コミュニティに参加済み) then (yes)
+        :チャットを楽しむ;
+    else (no)
+        note right : <color:red>ここでユーザは死んでしまうのでは？
+        end
+    endif
+}
+
+stop
+
+@enduml
+

@@ -1,4 +1,4 @@
 # doc-spec
 
-- [ユースケース図](./doc/ux/readme.md)
+- [ユースケース図](./doc/uc/readme.md)
 - [テーブル定義](./table.pdf)
