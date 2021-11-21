@@ -14,20 +14,67 @@ partition "Login" {
     endif
 }
 
+if (初回起動である) then (yes)
+
+    partition "User Initialize" {
+        note 
+            Profile画面とは別の初回専用のユ
+            ーザ情報更新画面である。
+            コミュニティに参加申請をする上で、
+            自分が何者か主張する必要があるため
+            Socail Login後、プロフィールを
+            編集するユースケースが想定される。
+        end note
+        :ユーザ情報初期編集画面;
+    }
+
+    partition "Community" {
+        :コミュニティ検索画面;
+        -> 検索する;
+        repeat :検索結果画面
+        repeat while (もう一度検索する)
+        if (目当てが見つかる) then (コミュニティカード押下)
+            :コミュニティ詳細画面;
+            :参加申請;
+
+        else (コミュニティ作成ボタン押下)
+            :コミュニティ作成画面;
+        endif
+    }
+
+
+else (no)
+endif
+
 partition "Lounge" {
     :ラウンジ画面;
-    note right
-        参加済みコミュニティが無くやることがない
-    end note
-    if (コミュニティに参加済み) then (yes)
-        :チャットを楽しむ;
-    else (no)
-        note right : <color:red>ここでユーザは死んでしまうのでは？
-        end
-    endif
+    split
+    split again
+        if (自分でコミュニティを作った) then (yes)
+            if (コミュニティ参加者がいる) then (yes)
+                :チャットを楽しむ;
+                kill
+            else (no)
+                :何もすることない;
+                note right : <color:red>ユーザ離脱
+                kill
+            endif
+        else (no)
+            if (参加申請が受理されている) then (yes)
+                :チャットを楽しむ;
+                kill
+            else (no)
+                :何もすることない;
+                note right : <color:red>ユーザ離脱
+                kill
+            endif
+        endif
+
+    end split
 }
 
+:他メイン画面へ遷移;
 stop
-
+     
 @enduml
 
