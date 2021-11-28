@@ -1,7 +1,0 @@
-include::./doc/includes/style.adoc[]
-
-= test top page
-
-:leveloffset: +1
-include::./doc/table/index.adoc[]
-

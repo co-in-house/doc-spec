@@ -4,3 +4,5 @@ include::../includes/style.adoc[]
 
 :leveloffset: +1
 include::community.adoc[]
+
+:leveloffset: -1

@@ -1,0 +1,9 @@
+include::./includes/style.adoc[]
+
+= Inhouse Spec.
+
+:leveloffset: +1
+
+include::./api/index.adoc[]
+include::./table/index.adoc[]
+
