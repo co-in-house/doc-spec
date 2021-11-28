@@ -1,0 +1,133 @@
+= Log API
+
+Loggin機能を提供する
+
+[cols="h,d",options="autowidth,autoheight"]
+|================
+|Path|/log
+|================
+
+== `POST /`
+コミュニティに紐づくログを記録する
+
+=== Request
+
+==== Header
+
+[cols="h,d",options="autowidth,autoheight"]
+|================
+|Content-type|application/json
+|================
+
+==== Parameter
+
+* Query Parameter `none`
+
+* Path Parameter `none`
+
+* Body
+
+[options="header,autowidth"]
+|================
+|Name|Type|Require|Description
+
+|communityId|int|○|イベント発生のコミュニティID
+|message|String|○|ログメッセージ
+|================
+
+
+=== Response
+
+.正常
+----
+200 Ok
+----
+
+.Requestに必須項目がない場合
+----
+400 Bad Request
+----
+
+.システムエラー
+----
+500 Internal Server Error
+----
+
+
+
+
+== `GET /`
+コミュニティに紐づくログ一覧を取得する
+
+=== Request
+
+==== Header `none`
+
+==== Parameter
+
+* Query Parameter 
+[options="header,autowidth"]
+|================
+|Name|Type|Require|Description
+
+|communityId|int|○|イベント発生のコミュニティID
+|================
+
+* Path Parameter `none`
+
+* Body `none`
+
+
+=== Response
+
+.正常
+----
+HTTP/2.0
+200 Ok
+Content-type: application/json
+{
+    "list" : [
+        {
+            "message" : "〇〇がXXの参加申請を承認しました。",
+            "timestamp" : "2021-01-01 23:00:00.0000"    
+        },
+        ...
+    ]
+}
+----
+
+
+==== Header
+[cols="h,d"]
+[options="autowidth,autoheight"]
+|================
+|Content-type|application/json
+|================
+
+==== Body
+[options="header,autowidth"]
+|================
+|Name|Type|Require|Description
+
+|list|list|○|ログメッセージリスト
+| message|String|○|ログメッセージ
+| timestamp|String|○|ログ記載時のtimestamp(JSC)
+|================
+
+
+.Requestに必須項目がない場合
+----
+400 Bad Request
+----
+
+.システムエラー
+----
+500 Internal Server Error
+----
+
+
+
+
+
+
+

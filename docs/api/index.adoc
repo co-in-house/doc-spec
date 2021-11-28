@@ -1,8 +1,8 @@
 include::../includes/style.adoc[]
 
-= API spec.
+= API Spec.
 
 :leveloffset: +1
-include::community.adoc[]
+include::log.adoc[]
 
 :leveloffset: -1

@@ -438,18 +438,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article data-line-1">
+<body class="article toc2 toc-left data-line-1">
 <div id="header">
 <h1>Inhouse Spec.</h1>
 <div class="details">
 <span id="author" class="author">Yota Konno</span><br>
 </div>
-<div id="toc" class="toc">
+<div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_api_spec">API spec.</a>
+<li><a href="#_api_spec">API Spec.</a>
 <ul class="sectlevel2">
-<li><a href="#_community_api">Community API</a></li>
+<li><a href="#_log_api">Log API</a></li>
 </ul>
 </li>
 <li><a href="#_table_def">Table Def.</a>
@@ -467,20 +467,64 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1 data-line-3">
-<h2 id="_api_spec">API spec.</h2>
+<h2 id="_api_spec">API Spec.</h2>
 <div class="sectionbody">
 <div class="sect2 data-line-1">
-<h3 id="_community_api">Community API</h3>
-<table class="tableblock frame-all grid-all fit-content data-line-5">
-<caption class="title">表 1. tbl def Com test</caption>
+<h3 id="_log_api">Log API</h3>
+<div class="paragraph data-line-3">
+<p>Loggin機能を提供する</p>
+</div>
+<table class="tableblock frame-all grid-all fit-content data-line-6">
 <colgroup>
 <col>
 <col>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Path</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/log</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3 data-line-10">
+<h4 id="_post"><code>POST /</code></h4>
+<div class="paragraph data-line-11">
+<p>コミュニティに紐づくログを記録する</p>
+</div>
+<div class="sect4 data-line-13">
+<h5 id="_request">Request</h5>
+<div class="sect5 data-line-15">
+<h6 id="_header">Header</h6>
+<table class="tableblock frame-all grid-all fit-content data-line-18">
+<colgroup>
 <col>
 <col>
-<col>
-<col>
-<col>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Content-type</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">application/json</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect5 data-line-22">
+<h6 id="_parameter">Parameter</h6>
+<div class="ulist data-line-24">
+<ul>
+<li class="data-line-24">
+<p>Query Parameter <code>none</code></p>
+</li>
+<li class="data-line-26">
+<p>Path Parameter <code>none</code></p>
+</li>
+<li class="data-line-28">
+<p>Body</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all fit-content data-line-31">
+<colgroup>
 <col>
 <col>
 <col>
@@ -488,113 +532,194 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">COLUMN</th>
-<th class="tableblock halign-left valign-top">ITEM</th>
-<th class="tableblock halign-left valign-top">TYPE</th>
-<th class="tableblock halign-left valign-top">LENGTH</th>
-<th class="tableblock halign-left valign-top">PK</th>
-<th class="tableblock halign-left valign-top">UNIQUE</th>
-<th class="tableblock halign-left valign-top">FK</th>
-<th class="tableblock halign-left valign-top">NN</th>
-<th class="tableblock halign-left valign-top">AUTOINC</th>
-<th class="tableblock halign-left valign-top">DEFAULT</th>
-<th class="tableblock halign-left valign-top">OVERVIEW</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Require</th>
+<th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">album_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">アルバム識別子</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bigint</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">管理用アルバム識別子</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">community_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">コミュニティ識別子</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bigint</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">コミュニティTBLのコミュニティ識別子</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">album_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">アルバム名</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">64</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">表示用アルバム名</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">thumbnail_img</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">サムネイルURL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">500</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">サムネイル用画像URL</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete_flag</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">削除フラグ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">communityId</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">論理削除用フラグ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">イベント発生のコミュニティID</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">created</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">作成日時</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMP</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;現在日時&gt;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">作成日時</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">modified</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">更新日時</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMP</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;現在日時&gt;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">更新日時</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ログメッセージ</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect4 data-line-39">
+<h5 id="_response">Response</h5>
+<div class="listingblock data-line-42">
+<div class="title">正常</div>
+<div class="content">
+<pre>200 Ok</pre>
+</div>
+</div>
+<div class="listingblock data-line-47">
+<div class="title">Requestに必須項目がない場合</div>
+<div class="content">
+<pre>400 Bad Request</pre>
+</div>
+</div>
+<div class="listingblock data-line-52">
+<div class="title">システムエラー</div>
+<div class="content">
+<pre>500 Internal Server Error</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3 data-line-59">
+<h4 id="_get"><code>GET /</code></h4>
+<div class="paragraph data-line-60">
+<p>コミュニティに紐づくログ一覧を取得する</p>
+</div>
+<div class="sect4 data-line-62">
+<h5 id="_request_2">Request</h5>
+<div class="sect5 data-line-64">
+<h6 id="_header_none">Header <code>none</code></h6>
+
+</div>
+<div class="sect5 data-line-66">
+<h6 id="_parameter_2">Parameter</h6>
+<div class="ulist data-line-68">
+<ul>
+<li class="data-line-68">
+<p>Query Parameter</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch data-line-70">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Require</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">communityId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">イベント発生のコミュニティID</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist data-line-76">
+<ul>
+<li class="data-line-76">
+<p>Path Parameter <code>none</code></p>
+</li>
+<li class="data-line-78">
+<p>Body <code>none</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect4 data-line-81">
+<h5 id="_response_2">Response</h5>
+<div class="listingblock data-line-84">
+<div class="title">正常</div>
+<div class="content">
+<pre>HTTP/2.0
+200 Ok
+Content-type: application/json
+{
+    "list" : [
+        {
+            "message" : "〇〇がXXの参加申請を承認しました。",
+            "timestamp" : "2021-01-01 23:00:00.0000"
+        },
+        ...
+    ]
+}</pre>
+</div>
+</div>
+<div class="sect5 data-line-100">
+<h6 id="_header_2">Header</h6>
+<table class="tableblock frame-all grid-all fit-content data-line-103">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Content-type</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">application/json</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect5 data-line-107">
+<h6 id="_body">Body</h6>
+<table class="tableblock frame-all grid-all fit-content data-line-109">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Require</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ログメッセージリスト</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ログメッセージ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ログ記載時のtimestamp(JSC)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock data-line-119">
+<div class="title">Requestに必須項目がない場合</div>
+<div class="content">
+<pre>400 Bad Request</pre>
+</div>
+</div>
+<div class="listingblock data-line-124">
+<div class="title">システムエラー</div>
+<div class="content">
+<pre>500 Internal Server Error</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -604,7 +729,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2 data-line-1">
 <h3 id="_community">COMMUNITY</h3>
 <table class="tableblock frame-all grid-all fit-content data-line-5">
-<caption class="title">表 2. tbl def COMMUNITY</caption>
+<caption class="title">表 1. tbl def COMMUNITY</caption>
 <colgroup>
 <col>
 <col>
@@ -744,7 +869,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2 data-line-1">
 <h3 id="_user">USER</h3>
 <table class="tableblock frame-all grid-all fit-content data-line-5">
-<caption class="title">表 3. tbl def USER</caption>
+<caption class="title">表 2. tbl def USER</caption>
 <colgroup>
 <col>
 <col>
@@ -868,7 +993,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <table class="tableblock frame-all grid-all fit-content data-line-8">
-<caption class="title">表 4. tbl def USER_COMMUNITY_RELATION</caption>
+<caption class="title">表 3. tbl def USER_COMMUNITY_RELATION</caption>
 <colgroup>
 <col>
 <col>
@@ -943,7 +1068,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2 data-line-1">
 <h3 id="_album">ALBUM</h3>
 <table class="tableblock frame-all grid-all fit-content data-line-5">
-<caption class="title">表 5. tbl def ALBUM</caption>
+<caption class="title">表 4. tbl def ALBUM</caption>
 <colgroup>
 <col>
 <col>
@@ -1070,7 +1195,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2 data-line-1">
 <h3 id="_album_photo">ALBUM_PHOTO</h3>
 <table class="tableblock frame-all grid-all fit-content data-line-5">
-<caption class="title">表 6. tbl def ALBUM_PHOTO</caption>
+<caption class="title">表 5. tbl def ALBUM_PHOTO</caption>
 <colgroup>
 <col>
 <col>
@@ -1184,7 +1309,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2 data-line-1">
 <h3 id="_event">EVENT</h3>
 <table class="tableblock frame-all grid-all fit-content data-line-5">
-<caption class="title">表 7. tbl def EVENT</caption>
+<caption class="title">表 6. tbl def EVENT</caption>
 <colgroup>
 <col>
 <col>
@@ -1365,7 +1490,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-11-28 22:31:49 +0900
+Last updated 2021-11-28 23:35:46 +0900
 </div>
 </div>
 </body>

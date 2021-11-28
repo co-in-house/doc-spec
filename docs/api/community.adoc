@@ -1,15 +1,1 @@
 = Community API
-
-.tbl def Com test
-[options="header,autowidth,autoheight"]
-|================
-|COLUMN|ITEM|TYPE|LENGTH|PK|UNIQUE|FK|NN|AUTOINC|DEFAULT|OVERVIEW
-
-|album_id|アルバム識別子|bigint||○|○||○|||管理用アルバム識別子
-|community_id|コミュニティ識別子|bigint|||||○|||コミュニティTBLのコミュニティ識別子
-|album_name|アルバム名|VARCHAR|64||||○|||表示用アルバム名
-|thumbnail_img|サムネイルURL|VARCHAR|500||||○|||サムネイル用画像URL
-|delete_flag|削除フラグ|int|||||○||0|論理削除用フラグ
-|created|作成日時|TIMESTAMP|||||○||<現在日時>|作成日時
-|modified|更新日時|TIMESTAMP|||||○||<現在日時>|更新日時
-|================
