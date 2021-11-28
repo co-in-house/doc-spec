@@ -1,6 +1,6 @@
 = Log API
 
-Loggin機能を提供する
+Logging機能を提供する
 
 [cols="h,d",options="autowidth,autoheight"]
 |================
@@ -28,6 +28,7 @@ Loggin機能を提供する
 * Body
 
 [options="header,autowidth"]
+
 |================
 |Name|Type|Require|Description
 
