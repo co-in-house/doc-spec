@@ -9,4 +9,5 @@ include::user_community_relation.adoc[]
 include::album.adoc[]
 include::album_photo.adoc[]
 include::event.adoc[]
+include::log.adoc[]
 :leveloffset: -1

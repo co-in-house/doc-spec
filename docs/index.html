@@ -460,6 +460,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_album">ALBUM</a></li>
 <li><a href="#_album_photo">ALBUM_PHOTO</a></li>
 <li><a href="#_event">EVENT</a></li>
+<li><a href="#_log">LOG</a></li>
 </ul>
 </li>
 </ul>
@@ -1485,12 +1486,100 @@ Content-type: application/json
 </tbody>
 </table>
 </div>
+<div class="sect2 data-line-1">
+<h3 id="_log">LOG</h3>
+<table class="tableblock frame-all grid-all fit-content data-line-5">
+<caption class="title">表 7. tbl def LOG</caption>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">COLUMN</th>
+<th class="tableblock halign-left valign-top">ITEM</th>
+<th class="tableblock halign-left valign-top">TYPE</th>
+<th class="tableblock halign-left valign-top">LENGTH</th>
+<th class="tableblock halign-left valign-top">PK</th>
+<th class="tableblock halign-left valign-top">UNIQUE</th>
+<th class="tableblock halign-left valign-top">FK</th>
+<th class="tableblock halign-left valign-top">NN</th>
+<th class="tableblock halign-left valign-top">AUTOINC</th>
+<th class="tableblock halign-left valign-top">DEFAULT</th>
+<th class="tableblock halign-left valign-top">OVERVIEW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">log_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ログ識別子</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bigint</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">管理用ログ識別子</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">community_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">コミュニティ識別子</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bigint</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">コミュニティ識別子</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">メッセージ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">128</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">発生したイベントメッセージ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">作成日時</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMP</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">○</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;現在日時&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">作成日時</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-11-28 23:43:39 +0900
+Last updated 2021-11-30 00:34:03 +0900
 </div>
 </div>
 </body>
