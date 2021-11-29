@@ -1,0 +1,40 @@
+@startuml log_post
+header 2021.11.30
+
+actor "Inhouse Mobile App" as app
+box "Heroku"
+    participant "App Instance" as api 
+    database "DB" as db
+end box
+
+'start
+activate app
+
+app -> app : イベント発生
+
+app -> api : call
+activate api
+
+api -> api : 入力チェック
+
+alt 必須項目がNull or Empty.
+    api --> app: 400 Bad Request
+end
+
+api -> db : INSERT Request Data
+activate db
+db --> api : result
+deactivate db
+
+alt Any Exceptiion.
+    api --> app: 500 Internal Server Error
+end
+
+api --> app : 200 Ok
+deactivate api
+
+app -> app : 処理結果SnackBar表示
+
+'end
+
+@enduml

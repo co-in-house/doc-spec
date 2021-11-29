@@ -1,0 +1,9 @@
+include::../includes/style.adoc[]
+
+= Sequence.
+
+// 相対パスで指定するが、root index.adocからの相対パスであるため./seqから記述する
+== コミュニティ内のイベントログを記録する
+image::./seq/log/log_post.svg[] 
+== コミュニティに紐づくログを取得する
+image::./seq/log/log_get.svg[] 

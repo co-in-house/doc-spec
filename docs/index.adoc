@@ -6,4 +6,5 @@ include::./includes/style.adoc[]
 
 include::./api/index.adoc[]
 include::./table/index.adoc[]
+include::./seq/index.adoc[]
 
